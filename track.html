@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/fevicon.png" type="">
+
+    <title> Expressline </title>
+
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <style>
+        .track {
+            display: flex;
+            width: 100%;
+            height: 60vh;
+            /* align-items: center; */
+            justify-content: center;
+            padding: 30px 80px;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .track h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            padding-bottom: 20px;
+        }
+
+        .track p {
+            color: white;
+        }
+
+        .inputbox {
+            display: flex;
+            /* padding: 10px; */
+            height: 60px;
+            background: white;
+            width: 50%;
+            border-radius: 10px !important;
+        }
+
+        .show2 {
+            display: none;
+        }
+
+        .inputbox input {
+            border: none;
+            width: 100%;
+            color: black;
+            padding: 0px 10px;
+            /* padding: 10px; */
+        }
+
+        .inputbox input:focus {
+            outline: none;
+            border: 1px solid salmon;
+
+        }
+
+        .inputbox button {
+            background: rgb(255, 114, 65);
+            /* padding: 10px; */
+            color: white;
+            border: none;
+            width: 40%;
+
+        }
+
+        .inputbox button:hover {
+            background: rgb(248, 95, 44);
+        }
+
+        .inputbox button:focus {
+            outline: none;
+            border: none;
+        }
+
+        @media screen and (max-width: 800px) {
+            .inputbox {
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .inputbox .show {
+                display: none;
+            }
+
+            .inputbox input {
+                padding: 10px 5px;
+            }
+
+
+            .show2 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 0px;
+                background: rgb(255, 114, 65);
+                color: white;
+                border: none;
+
+            }
+
+            .show2:hover {
+                background: rgb(248, 95, 44);
+            }
+
+            .show2:focus {
+                outline: none;
+                border: none;
+            }
+
+
+            .track {
+                padding: 30px 10px;
+                margin: 0;
+                width: 90vw;
+                justify-content: center;
+            }
+
+            .track p {
+                font-size: 14px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body class="sub_page">
+
+    <div class="hero_area">
+        <div class="hero_bg_box">
+            <img src="images/slider-bg.jpg" alt="">
+        </div>
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="header_top">
+                <div class="container-fluid ">
+                    <div class="header_top_content">
+                        <a class="navbar-brand d-none d-lg-flex" href="index.html">
+                            <span>
+                                Expressline
+                            </span>
+                        </a>
+                        <div class="contact_nav">
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    +01 123455678990
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    demo@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_bottom">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg custom_nav-container ">
+                        <a class="navbar-brand d-flex d-lg-none" href="index.html">
+                            <span>
+                                Expressline
+                            </span>
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class=""> </span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav  ">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="index.html">Home </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="service.html">Services <span
+                                            class="sr-only">(current)</span> </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.html"> About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact Us</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i>
+                                        Login</a>
+                                </li> -->
+                                <li style="padding: 5px 15px; background-color: rgb(255, 114, 65); color: white;">
+                                    <a href="track.html" style="color: white;">
+                                        Track
+                                    </a>
+                                </li>
+                                <!-- <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form> -->
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- end header section -->
+        <section class="track">
+            <!-- <h1>Safe & Reliable <span style="color: rgb(255, 114, 65);">Logistics</span> Solutions!</h1> -->
+            <div class="inputbox">
+                <input type="text" placeholder="Your Tracking ID">
+                <button class="show">Track & Trace</button>
+            </div>
+            <button class="show2">Track & Trace</button>
+            <p>FOR ORDER STATUS INQUIRY</p>
+        </section>
+    </div>
+
+
+    <!-- info section -->
+
+
+    <!-- end info section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayYear"></span> All
+                <a href="https://html.design/">ExpressLine</a>
+            </p>
+        </div>
+    </footer>
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+    </script>
+    <!-- End Google Map -->
+
+</body>
+
+</html>
