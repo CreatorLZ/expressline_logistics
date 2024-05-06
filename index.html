@@ -82,7 +82,7 @@
     @media screen and (max-width: 800px) {
       .activity_section {
         flex-direction: column;
-        gap: 25px;
+        gap: 40px;
         padding: 20px 10px;
         align-items: start;
       }
@@ -728,6 +728,7 @@
   <!-- Google Translate -->
   <div id="google_translate_element"></div>
   <script type="text/javascript">
+    // Initialize Google Translate
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
         {
@@ -740,7 +741,7 @@
       );
     }
 
-    // Load Google Translate API
+    // Load Google Translate API dynamically
     function loadGoogleTranslate() {
       var script = document.createElement('script');
       script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
@@ -763,6 +764,7 @@
     detectUserLanguageAndTranslate();
   </script>
   <!-- End Google Translate -->
+
 
 
   <!-- Google tag (gtag.js) -->
