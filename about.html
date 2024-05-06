@@ -67,7 +67,14 @@
       border-radius: 0px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
+
+    @media screen and (max-width: 800px) {
+      .mobile {
+        padding-bottom: 40px;
+      }
+    }
   </style>
+  <div id="google_translate_element" style="padding: 10px 30px;   background-color: #344d77;"></div>
 
 </head>
 
@@ -166,7 +173,7 @@
                 About Us
               </h2>
             </div>
-            <h1 style=" font-size: 2.5rem;">Safe Logistics & Transport Solutions That Saves your
+            <h1 style=" font-size: 1.5rem;">Safe Logistics & Transport Solutions That Saves your
               Valuable Time!</h1>
             <p class="animate">
               Welcome to ExpressLine Logistics, where we redefine excellence in logistics services. With a commitment to
@@ -207,7 +214,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="images/about-img.png" alt="" class="animate">
+            <img src="images/client6.webp" alt="" class="animate mobile">
           </div>
         </div>
         <div class="col-md-6">
@@ -246,7 +253,7 @@
                 Why Choose ExpressLine Logistics?
               </h2>
             </div>
-            <h1 style=" font-size: 2.5rem;" class="animate">
+            <h1 style=" font-size: 1.5rem;" class="animate">
               Our Commitment to Excellence
             </h1>
             <p class="animate">
@@ -404,7 +411,56 @@
     }
   </script>
   <!-- end animation -->
+  <script src="script.js"></script>
+  <!-- Google Translate -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    // Initialize Google Translate
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'en',
+          autoDisplay: false, // Disable automatic display of the widget
+          gaTrack: true, // Enable Google Analytics tracking
+          gaId: 'G-K5LWV6R4MT' // Replace 'YOUR-GA-ID' with your Google Analytics ID
+        },
+        'google_translate_element'
+      );
+    }
 
+    // Load Google Translate API dynamically
+    function loadGoogleTranslate() {
+      var script = document.createElement('script');
+      script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+      script.type = 'text/javascript';
+      document.head.appendChild(script);
+    }
+
+    // Detect user's language and trigger translation
+    function detectUserLanguageAndTranslate() {
+      var userLanguage = navigator.language || navigator.userLanguage;
+      var supportedLanguages = ['af', 'sq', 'am', 'ar', 'hy', 'az', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'ceb', 'ny', 'zh-CN', 'zh-TW',
+        'co', 'hr', 'cs', 'da', 'nl', 'en', 'eo', 'et', 'tl', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gu', 'ht',
+        'ha', 'haw', 'iw', 'hi', 'hmn', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jw', 'kn', 'kk', 'km', 'rw', 'ko',
+        'ku', 'ky', 'lo', 'la', 'lv', 'lt', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no',
+        'or', 'ps', 'fa', 'pl', 'pt', 'pa', 'ro', 'ru', 'sm', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so',
+        'es', 'su', 'sw', 'sv', 'tg', 'ta', 'te', 'th', 'tr', 'uk', 'ur', 'ug', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo',
+        'zu']; // Add more languages as needed
+      var userLanguageShort = userLanguage.split('-')[0];
+
+      if (supportedLanguages.includes(userLanguageShort)) {
+        loadGoogleTranslate(); // Load Google Translate API
+      }
+    }
+
+    // Call detectUserLanguageAndTranslate when the page loads
+    detectUserLanguageAndTranslate();
+  </script>
+  <!-- End Google Translate -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5LWV6R4MT"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-K5LWV6R4MT'); </script>
 </body>
 
 </html>

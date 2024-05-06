@@ -87,8 +87,47 @@
         align-items: start;
       }
     }
+
+    @media screen and (max-width: 800px) {
+      .mobile {
+        padding-bottom: 40px;
+      }
+
+      .how {
+        flex-direction: column;
+      }
+    }
+
+    .how {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 80px;
+      gap: 10px;
+      background-color: #344d77;
+      color: white;
+    }
+
+    .howdo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .howdo h2 {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .howdo img {
+      width: 70px;
+      height: 70px;
+      padding-bottom: 10px;
+    }
   </style>
-  <div id="google_translate_element" style="padding: 10px 30px;"></div>
+  <div id="google_translate_element" style="padding: 10px 30px;   background-color: #344d77;"></div>
 </head>
 
 <body>
@@ -323,7 +362,7 @@
                 Who We Are
               </h2>
             </div>
-            <h1 style="font-size: 2.5rem;" class="animate">We stand as a top-tier global logistics service provider.
+            <h1 style="font-size: 1.5rem;" class="animate">We stand as a top-tier global logistics service provider.
             </h1>
             <p class="animate">
               Welcome to ExpressLine Logistics, where we redefine excellence in logistics services. With a commitment to
@@ -431,6 +470,73 @@
   </section>
 
   <!-- end service section -->
+
+  <!-- client section -->
+  <section class="how">
+    <div class="howdo">
+      <img src="images/order.png" alt="">
+      <h2>Customer places order</h2>
+      <p>Inspection and quality check of goods</p>
+    </div>
+    <div class="howdo">
+      <img src="images/payment.png" alt="">
+      <h2>Payment successful</h2>
+      <p>Payoneer, Paypal, or Visa master card</p>
+    </div>
+    <div class="howdo">
+      <img src="images/warehouse.png" alt="">
+      <h2>Warehouse receives order</h2>
+      <p>Inspection of the accuracy of the goods</p>
+    </div>
+    <div class="howdo">
+      <img src="images/picked.png" alt="">
+      <h2>Item picked, packed & shipped</h2>
+      <p>Ship the goods to the local carrier</p>
+    </div>
+    <div class="howdo">
+      <img src="images/delivery-2.png" alt="">
+      <h2>Delivered</h2>
+      <p>Update order status on the system</p>
+    </div>
+  </section>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding sec-1 show-animate">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-6 mobile">
+          <div class="img-box">
+            <img src="images/client6.webp" alt="" class="animate">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container" style="padding-bottom: 15px;">
+              <h2 class="animate">
+                What we do
+              </h2>
+            </div>
+            <h1 style="font-size: 1.5rem;" class="animate">We ensure safe transportation & delivery.
+            </h1>
+            <p class="animate">
+              At ExpressLine Logistics, safety is our top priority. We implement stringent measures to ensure the safe
+              transportation and delivery of your goods, adhering to industry standards and regulations. Our trained
+              professionals handle each shipment with care and precision, minimizing risks and ensuring secure handling
+              at every stage of the journey. With state-of-the-art tracking systems and real-time monitoring, we provide
+              transparency and peace of mind, guaranteeing that your items reach their destination safely and on time.
+              Trust us for reliable and secure transportation solutions tailored to your needs.
+            </p>
+            <a href="about.html" class="animate">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
 
   <!-- contact section -->
   <section class="contact_section layout_padding">
@@ -570,7 +676,7 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Aarav Kumar Singh
+                    bran
                   </h5>
                   <!-- <h6>
                     Magna
@@ -586,11 +692,11 @@
             <div class="item">
               <div class="box">
                 <div class="img-box">
-                  <img src="images/client-4.jpg" alt="" class="img-1">
+                  <img src="images/client-4.png" alt="" class="img-1">
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Kim Soo-yeon
+                    Sarah
                   </h5>
                   <!-- <h6>
                     Magna
