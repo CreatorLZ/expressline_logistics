@@ -729,14 +729,41 @@
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-        { pageLanguage: 'en' },
+        {
+          pageLanguage: 'en',
+          autoDisplay: false, // Disable automatic display of the widget
+          gaTrack: true, // Enable Google Analytics tracking
+          gaId: 'G-K5LWV6R4MT' // Replace 'YOUR-GA-ID' with your Google Analytics ID
+        },
         'google_translate_element'
       );
-    } 
+
+      // Detect user's language
+      var userLanguage = navigator.language || navigator.userLanguage;
+      var supportedLanguages = ['en', 'es', 'fr']; // Add more languages as needed
+      var userLanguageShort = userLanguage.split('-')[0];
+
+      // Check if the user's language is supported
+      if (supportedLanguages.includes(userLanguageShort)) {
+        // Set the translation to the user's language
+        google.translate.translate('en', userLanguageShort, function (translation) {
+          var widget = google.translate.TranslateElement.getInstance('google_translate_element');
+          widget.showBanner(false); // Hide the banner
+          widget.showInfo(false); // Hide the info button
+          widget.setLanguage(userLanguageShort); // Set the widget's language
+          widget.translatePage(userLanguageShort); // Translate the page
+        });
+      }
+    }
   </script>
   <script type="text/javascript"
     src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <!-- end google_translate_element -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5LWV6R4MT"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-K5LWV6R4MT'); </script>
+
 
   <!-- animation -->
   <script>
