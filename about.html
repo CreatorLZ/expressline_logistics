@@ -416,13 +416,60 @@
   <div id="google_translate_element"></div>
   <script type="text/javascript">
     // Initialize Google Translate
+    // function googleTranslateElementInit() {
+    //   new google.translate.TranslateElement(
+    //     {
+    //       pageLanguage: 'en',
+    //       autoDisplay: false, // Disable automatic display of the widget
+    //       gaTrack: true, // Enable Google Analytics tracking
+    //       gaId: 'G-K5LWV6R4MT' // Replace 'YOUR-GA-ID' with your Google Analytics ID
+    //     },
+    //     'google_translate_element'
+    //   );
+    // }
+
+    // Load Google Translate API dynamically
+    // function loadGoogleTranslate() {
+    //   var script = document.createElement('script');
+    //   script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    //   script.type = 'text/javascript';
+    //   document.head.appendChild(script);
+    // }
+
+    // Detect user's language and trigger translation
+    // function detectUserLanguageAndTranslate() {
+    //   var userLanguage = navigator.language || navigator.userLanguage;
+    //   var supportedLanguages = ['af', 'sq', 'am', 'ar', 'hy', 'az', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'ceb', 'ny', 'zh-CN', 'zh-TW',
+    //     'co', 'hr', 'cs', 'da', 'nl', 'en', 'eo', 'et', 'tl', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gu', 'ht',
+    //     'ha', 'haw', 'iw', 'hi', 'hmn', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jw', 'kn', 'kk', 'km', 'rw', 'ko',
+    //     'ku', 'ky', 'lo', 'la', 'lv', 'lt', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no',
+    //     'or', 'ps', 'fa', 'pl', 'pt', 'pa', 'ro', 'ru', 'sm', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so',
+    //     'es', 'su', 'sw', 'sv', 'tg', 'ta', 'te', 'th', 'tr', 'uk', 'ur', 'ug', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo',
+    //     'zu']; // Add more languages as needed
+    //   var userLanguageShort = userLanguage.split('-')[0];
+
+    //   if (supportedLanguages.includes(userLanguageShort)) {
+    //     loadGoogleTranslate(); // Load Google Translate API
+    //   }
+    // }
+
+    // Call detectUserLanguageAndTranslate when the page loads
+    // detectUserLanguageAndTranslate();
+  </script>
+  <!-- End Google Translate -->
+
+  <!-- Google Translate -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    // Initialize Google Translate
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
         {
           pageLanguage: 'en',
           autoDisplay: false, // Disable automatic display of the widget
           gaTrack: true, // Enable Google Analytics tracking
-          gaId: 'G-K5LWV6R4MT' // Replace 'YOUR-GA-ID' with your Google Analytics ID
+          gaId: 'G-K5LWV6R4MT', // Replace 'YOUR-GA-ID' with your Google Analytics ID
+          layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Adjust layout as needed
         },
         'google_translate_element'
       );
@@ -449,7 +496,73 @@
       var userLanguageShort = userLanguage.split('-')[0];
 
       if (supportedLanguages.includes(userLanguageShort)) {
-        loadGoogleTranslate(); // Load Google Translate API
+        // Load Google Translate API and set target language
+        googleTranslateElementInit();
+      } else {
+        // Fallback to Geolocation API for better location detection
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              // Use latitude and longitude to determine the location
+              // Example: Check if the user is in a specific country and set language accordingly
+              var latitude = position.coords.latitude;
+              var longitude = position.coords.longitude;
+
+              // You can implement your own logic here to determine the language based on location
+              var locationLanguage = determineLanguageFromLocation(latitude, longitude);
+
+              if (locationLanguage && supportedLanguages.includes(locationLanguage)) {
+                // Set target language based on location
+                setTargetLanguage(locationLanguage);
+                // Load Google Translate API
+                loadGoogleTranslate();
+              } else {
+                // Fallback to default language
+                loadGoogleTranslate();
+              }
+            },
+            function (error) {
+              // Handle geolocation error
+              console.error('Error getting user location:', error);
+              // Fallback to default language
+              loadGoogleTranslate();
+            }
+          );
+        } else {
+          // Browser does not support Geolocation API, fallback to default language
+          loadGoogleTranslate();
+        }
+      }
+    }
+
+    // Function to determine language based on location
+    async function determineLanguageFromLocation(latitude, longitude) {
+      try {
+        const response = await fetch(`https://restcountries.com/v3.1/latlng/${latitude},${longitude}`);
+        const data = await response.json();
+
+        if (data && data[0] && data[0].languages && data[0].languages[0]) {
+          const languageCode = data[0].languages[0].code;
+          return languageCode;
+        } else {
+          console.error('Error: Unable to determine language from location data.');
+          return 'en'; // Fallback to default language
+        }
+      } catch (error) {
+        console.error('Error fetching location data:', error);
+        return 'en'; // Fallback to default language
+      }
+    }
+
+
+    // Function to set target language for Google Translate
+    function setTargetLanguage(languageCode) {
+      if (google.translate.TranslateElement) {
+        google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: languageCode,
+          layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+        }, 'google_translate_element');
       }
     }
 
@@ -457,6 +570,7 @@
     detectUserLanguageAndTranslate();
   </script>
   <!-- End Google Translate -->
+
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5LWV6R4MT"></script>
