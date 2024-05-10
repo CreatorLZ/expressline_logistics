@@ -30,6 +30,691 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    .parent {
+      position: relative;
+      overflow: hidden;
+      /* Ensure the child image doesn't overflow the parent */
+    }
+
+    .image {
+      transition: transform 0.3s ease;
+    }
+
+    .parent:hover .image {
+      transform: scale(1.1) rotate(3deg);
+      /* Adjust the scale and rotation values as desired */
+    }
+
+    section .animate {
+      transition: 0.7s
+    }
+
+    .sec-1 .animate {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+
+    .sec-1.show-animate .animate {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .activity_section {
+      padding: 60px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: whitesmoke;
+    }
+
+    .activity_section img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .details {
+      display: flex;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .detailsinfo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .detailsinfo h5 {
+      font-weight: 600;
+      color: rgb(71, 71, 71);
+    }
+
+    .detailsinfo p {
+      color: grey;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .hide2 {
+      display: flex;
+    }
+
+    .readmore {
+      padding: 10px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 800px) {
+      .activity_section {
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px 10px;
+        align-items: start;
+      }
+
+
+    }
+
+    @media screen and (max-width: 1000px) {
+      .mobile {
+        padding-bottom: 40px;
+      }
+
+      .hide2 {
+        display: none;
+      }
+
+      .how {
+        flex-direction: column;
+        gap: 70px;
+      }
+
+      .howdo p {
+        margin-bottom: 80px;
+      }
+
+      .hide {
+        display: flex;
+      }
+
+      .newsection {
+        flex-direction: column;
+        /* align-items: center; */
+        width: 100% !important;
+        justify-content: space-between;
+        height: fit-content !important;
+        overflow-x: hidden !important;
+
+      }
+
+      .background {
+        width: 100% !important;
+        height: 100vh !important;
+        overflow-x: hidden !important;
+        padding-bottom: 0px !important;
+        background: linear-gradient(to top, whitesmoke, whitesmoke) !important;
+
+      }
+
+      .image2 {
+        width: 100% !important;
+        height: 80% !important;
+      }
+
+      .image3 {
+        top: 45% !important;
+        left: 56% !important;
+      }
+
+      .clipath {
+        top: 58% !important;
+        left: 35% !important;
+        border-radius: 0 0 20px 20px;
+      }
+
+      .whoweare {
+        width: 100vw !important;
+        gap: 10px !important;
+        padding: 20px 15px !important;
+        padding-bottom: 60px !important;
+        text-align: center;
+      }
+
+      .abouttop {
+        width: 90% !important;
+        align-self: center !important;
+      }
+
+      .whoweare h2 {
+        font-size: 1.7rem !important;
+      }
+
+      .thingswedo {
+        flex-direction: column;
+        text-align: left !important;
+      }
+
+      .aboutdown {
+        flex-direction: column;
+      }
+
+      .contactdiv {
+        width: 200px;
+        margin-left: 10px;
+      }
+
+      .contactdiv2 {
+        margin-top: 30px;
+        width: 220px;
+      }
+
+      .howdiv {
+        gap: 70px !important;
+        padding: 10px !important;
+      }
+
+      .grid-container {
+        grid-template-columns: repeat(1, 1fr) !important;
+
+      }
+
+      .grid-item {
+        height: fit-content !important;
+
+      }
+
+      .grid-inner {
+        flex-direction: column !important;
+      }
+
+      .aboutpremium {
+        color: white;
+        padding: 3px 10px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        background: rgb(255, 114, 65);
+        width: fit-content;
+      }
+
+      .premiumtop h2 {
+        font-size: 1.6rem !important;
+      }
+
+      .premiumtop {
+        text-align: center !important;
+      }
+
+      .assurance {
+        height: 80vh !important;
+        padding: 20px !important;
+      }
+
+      .assurecontainer {
+        height: 87% !important;
+      }
+
+      .assureinner {
+        height: 97% !important;
+        flex-direction: column;
+        justify-content: normal !important;
+        padding: 30px !important;
+      }
+
+      .assuretext {
+        align-items: center;
+        width: 100% !important;
+        height: 80% !important;
+        gap: 20px !important;
+      }
+
+      .assuretext h2 {
+        font-size: 2rem !important;
+        font-weight: bold;
+      }
+
+      .smile {
+        height: 150px;
+        width: 120px;
+        top: 83% !important;
+        left: 83% !important;
+        z-index: 10;
+      }
+
+      .contactdiv3 {
+        z-index: 20;
+        height: 60px !important;
+      }
+    }
+
+    .how {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 80px;
+      gap: 75px;
+      flex-wrap: wrap;
+      background-color: #344d77;
+      color: white;
+    }
+
+    .howdiv {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 80px;
+      gap: 75px;
+      flex-wrap: wrap;
+      background-color: #344d77;
+      color: white;
+    }
+
+    .abouttop2 {
+      color: #344d77;
+      font-weight: bold;
+      padding: 3px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      background: whitesmoke;
+      width: 200px;
+    }
+
+    .howdo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .howdo h2 {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .howdo img {
+      width: 70px;
+      height: 70px;
+      padding-bottom: 10px;
+    }
+
+    .background {
+      background: linear-gradient(to right, rgba(220, 220, 220, 0.7), whitesmoke);
+      height: 100%;
+      width: 50vw;
+      padding: 20px;
+      padding-bottom: 60px;
+    }
+
+    .newsection {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+
+    }
+
+    .imagebox {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    .image2 {
+      border-radius: 10px;
+      border: 10px solid white;
+      width: 70%;
+    }
+
+    .image3 {
+      position: absolute;
+      top: 50%;
+      left: 65%;
+      /* width: 100px;
+      height: 200px; */
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      border: 10px solid white;
+    }
+
+    .clipath {
+      /* clip-path: polygon(0 0, 100% 0, 60% 85%, 47% 85%); */
+      background-color: rgb(255, 114, 65);
+      width: 170px;
+      height: 155px;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      top: 78.6%;
+      left: 51%;
+      color: white;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .whoweare {
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+      padding: 80px 10px;
+      background: linear-gradient(to right, whitesmoke, white);
+
+    }
+
+    .abouttop {
+      color: white;
+      padding: 3px 10px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      background: rgb(255, 114, 65);
+      width: 40%;
+    }
+
+    .whoweare h2 {
+      color: #344d77;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .whowearep {
+      color: grey;
+      font-size: 1.2rem;
+    }
+
+    .thingswedo {
+      display: flex;
+      padding: 20px 10px;
+      border-left: 7px solid rgb(255, 114, 65);
+      background: white;
+    }
+
+    .thingswedo li {
+      font-weight: bold;
+      color: #344d77;
+    }
+
+    .emoji-list {
+      list-style-type: none;
+
+      padding-left: 20px;
+
+
+    }
+
+    .emoji-list li::before {
+      content: "✔️";
+      color: black;
+      padding-right: 5px;
+      /* Emoji for each list item */
+    }
+
+    .aboutdown {
+      display: flex;
+      gap: 10px;
+      padding-top: 20px;
+    }
+
+    .contactdiv {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1px 10px;
+      gap: 20px;
+      background: #344d77;
+      border-radius: 10px;
+      height: 55px;
+      color: white;
+      cursor: pointer;
+      width: 180px;
+      font-weight: bold;
+    }
+
+    .contactdiv:hover {
+      color: white;
+      background: rgb(255, 114, 65);
+    }
+
+    .contactdiv img {
+      width: 35px;
+      height: 35px;
+      background: white;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+    .contactdiv2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1px 10px;
+      gap: 20px;
+      height: 50px;
+      background: transparent;
+      border-radius: 10px;
+      color: #344d77;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .contactdiv2:hover {
+      background: transparent;
+
+    }
+
+    .contactdiv2 img {
+      width: 65px;
+      height: 65px;
+      background: rgb(243, 236, 234);
+      ;
+      padding: 20px;
+      border-radius: 50%;
+    }
+
+    .question-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0px !important;
+
+    }
+
+    .premium {
+      display: flex;
+      width: 100vw;
+      min-height: 100vh;
+      flex-direction: column;
+      gap: 40px;
+      max-height: auto;
+      background: linear-gradient(to right, whitesmoke, white);
+      padding: 80px 20px;
+    }
+
+    .premiumtop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .premiumdesc {
+      color: gray;
+    }
+
+    .premiumtop h2 {
+      color: #344d77;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* Two columns */
+      grid-gap: 25px;
+      /* Gap between grid items */
+    }
+
+    .grid-item {
+      background-color: white;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      border-radius: 20px 0px 20px 0px;
+      border-bottom: 5px solid lightblue;
+      height: 210px;
+      padding: 20px 35px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: 300ms;
+    }
+
+    .grid-item:hover {
+      border-bottom: 5px solid rgb(255, 114, 65);
+      cursor: pointer;
+    }
+
+    .grid-inner {
+      display: flex;
+      gap: 15px;
+    }
+
+    .grid-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gridp1 {
+      color: #344d77;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .gridp2 {
+      color: gray;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    .grid-inner img {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      padding: 20px;
+      background-color: rgba(173, 216, 230, 0.5);
+      border: 1px dashed darkblue;
+    }
+
+    .aboutpremium {
+      color: white;
+      padding: 3px 10px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      background: rgb(255, 114, 65);
+      width: fit-content;
+    }
+
+    .assurance {
+      width: 100%;
+      height: 50vh;
+      padding: 20px 40px;
+      background-color: white;
+      /* height: 300px; */
+    }
+
+    .assurecontainer {
+      display: flex;
+      width: 100%;
+      background: rgb(255, 114, 65);
+      border-radius: 20px;
+      height: 250px;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .assureinner {
+      width: 98%;
+      height: 230px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px dashed white;
+      padding: 10px 40px;
+    }
+
+    .assuretext {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      width: 50%;
+    }
+
+    .assuretext h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .assuretext p {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    .smile {
+      position: absolute;
+      top: 23%;
+      left: 64%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    .contactdiv3 {
+      background: white;
+      color: #344d77;
+      font-size: 1rem;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      gap: 20px;
+      height: 50px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0px 2px 10px 2px rgba(255, 255, 255, 0.5);
+    }
+
+    .contactdiv3 img {
+      width: 35px;
+      height: 35px;
+      padding: 5px;
+      background: rgba(173, 216, 230, 0.5);
+      border-radius: 50%;
+    }
+  </style>
   <div id="google_translate_element" style="padding: 10px 30px;   background-color: #344d77;"></div>
 
 </head>
@@ -119,22 +804,28 @@
 
   <!-- service section -->
 
-  <section class="service_section layout_padding">
+  <section class="service_section layout_padding sec-1 show-animate">
     <div class="service_container">
       <div class="container ">
-        <div class="heading_container">
+        <!-- <div class="heading_container">
           <h2>
             Our Services
           </h2>
           <p>
             What are our Services
           </p>
+        </div> -->
+        <div class="premiumtop">
+          <p class="aboutpremium" style="width: fit-content;">OUR SERVICES</p>
+          <h2>Wide Variety of Logistics Services</h2>
+          <p class="premiumdesc">Discover exceptional logistics solutions designed to elevate your business.
+          </p>
         </div>
         <div class="row">
-          <div class="col-md-6 col-lg-4 mx-auto ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s1.jpg" alt="">
+          <div class="col-md-6 col-lg-4 mx-auto animate " style="border-radius: 10px;">
+            <div class="box " style="border-radius: 10px;">
+              <div class="img-box parent">
+                <img src="images/s1.jpg" class="image" alt="" style="border-radius: 10px;">
               </div>
               <div class="detail-box">
                 <h5>
@@ -142,21 +833,21 @@
                 </h5>
                 <p>
                   Explore our efficient road transport solutions designed for reliability and timeliness.From seamless
-                  handling of local deliveries
-                  to ezcellent interstate hauls, you can
+                  handling of local deliveries....
+                  <!-- to excellent interstate hauls, you can
                   trust us to keep your goods moving smoothly, ensuring every mile of the journey is optimized for your
-                  business's success.
+                  business's success. -->
                 </p>
-                <!-- <a href="">
+                <a href="" class="readmore">
                   Read More
-                </a> -->
+                </a>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mx-auto ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s2.jpg" alt="">
+          <div class="col-md-6 col-lg-4 mx-auto animate">
+            <div class="box " style="border-radius: 10px;">
+              <div class="img-box parent">
+                <img src="images/s2.jpg" class="image" alt="" style="border-radius: 10px;">
               </div>
               <div class="detail-box">
                 <h5>
@@ -164,20 +855,22 @@
                 </h5>
                 <p>
                   Experience the speed and efficiency of our air freight services. At ExpressLine Logistics, we excel in
-                  delivering your goods with precision and reliability, leveraging strategic partnerships and
+                  delivering your....
+                  <!-- goods with precision and reliability, leveraging
+                  strategic partnerships and
                   cutting-edge technology to ensure timely deliveries across the globe. Trust us to elevate your
-                  logistics experience with swift and secure air transport solutions
+                  logistics experience with swift and secure air transport solutions -->
                 </p>
-                <!-- <a href="">
+                <a href="" class="readmore">
                   Read More
-                </a> -->
+                </a>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mx-auto ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s3.jpg" alt="">
+          <div class="col-md-6 col-lg-4 mx-auto animate">
+            <div class="box " style="border-radius: 10px;">
+              <div class="img-box parent">
+                <img src="images/s3.jpg" class="image" alt="" style="border-radius: 10px;">
               </div>
               <div class="detail-box">
                 <h5>
@@ -185,12 +878,14 @@
                 </h5>
                 <p>
                   Explore our comprehensive sea freight services, delivering cost-effective and reliable transportation
-                  solutions for your cargo. With global reach and meticulous planning, we navigate the seas to ensure
-                  timely and secure deliveries to ensure your business's success.
+                  solutions for your....
+                  <!-- cargo. With global reach and meticulous
+                  planning, we navigate the seas to ensure
+                  timely and secure deliveries to ensure your business's success. -->
                 </p>
-                <!-- <a href="">
+                <a href="" class="readmore">
                   Read More
-                </a> -->
+                </a>
               </div>
             </div>
           </div>
@@ -200,6 +895,94 @@
   </section>
 
   <!-- end service section -->
+
+
+  <!-- end service section -->
+
+
+  <!-- about section -->
+
+  <section class="premium">
+    <div class="premiumtop">
+      <p class="aboutpremium" style="width: fit-content;">OUR SERVICES</p>
+      <h2> Premium Services By ExpressLine</h2>
+      <p class="premiumdesc">Discover exceptional premium logistics solutions designed to elevate your business. </p>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/ship.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">Expedited Shipping</p>
+            <p class="gridp2"> Guaranteed fast delivery for time-sensitive shipments, with priority handling and
+              dedicated resources to ensure prompt arrival.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/glove.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">White-Glove Service</p>
+            <p class="gridp2"> Premium handling of delicate or high-value items, including special packaging,
+              temperature control, and personalized care throughout the shipping process.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/supply.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1"> Customized Supply Chain Solutions</p>
+            <p class="gridp2">Tailored logistics strategies designed to optimize efficiency, reduce costs, and enhance
+              overall supply chain performance based on specific client needs and industry requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/warehousing.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">On-Demand Warehousing</p>
+            <p class="gridp2"> Flexible and scalable warehousing solutions with real-time inventory management, order
+              fulfillment, and distribution services available as needed, providing agility and responsiveness to
+              changing demands.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/track.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">Advanced Tracking and Analytics</p>
+            <p class="gridp2">Robust tracking systems with real-time updates, detailed analytics, and predictive
+              modeling capabilities to provide actionable insights, optimize routes, and improve decision-making for
+              clients.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/support.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">Exclusive Customer Support</p>
+            <p class="gridp2">Dedicated account managers, 24/7 support, and personalized assistance for VIP clients,
+              offering a high level of responsiveness, proactive communication, and problem-solving expertise to ensure
+              a seamless logistics experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end about section -->
 
   <!-- info section -->
 
