@@ -179,7 +179,7 @@
       .whoweare {
         width: 100vw !important;
         gap: 10px !important;
-        padding: 20px 10px !important;
+        padding: 20px 15px !important;
         padding-bottom: 60px !important;
       }
 
@@ -212,6 +212,42 @@
       .howdiv {
         gap: 70px !important;
         padding: 10px !important;
+      }
+
+      .grid-container {
+        grid-template-columns: repeat(1, 1fr) !important;
+
+      }
+
+      .grid-item {
+        height: fit-content !important;
+
+      }
+
+      .grid-inner {
+        flex-direction: column !important;
+      }
+
+      .aboutpremium {
+        color: white;
+        padding: 3px 10px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        background: rgb(255, 114, 65);
+        width: fit-content;
+      }
+
+      .premiumtop h2 {
+        font-size: 1.6rem !important;
+      }
+
+      .premiumtop {
+        text-align: center !important;
       }
     }
 
@@ -318,7 +354,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      top: 76.8%;
+      top: 78.6%;
       left: 51%;
       color: white;
       border-radius: 0 0 20px 20px;
@@ -328,7 +364,7 @@
       display: flex;
       flex-direction: column;
       width: 50vw;
-      padding: 100px 10px;
+      padding: 80px 10px;
       background: linear-gradient(to right, whitesmoke, white);
 
     }
@@ -336,6 +372,9 @@
     .abouttop {
       color: white;
       padding: 3px 10px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -367,6 +406,21 @@
       color: #344d77;
     }
 
+    .emoji-list {
+      list-style-type: none;
+
+      padding-left: 20px;
+
+
+    }
+
+    .emoji-list li::before {
+      content: "✔️";
+      color: black;
+      padding-right: 5px;
+      /* Emoji for each list item */
+    }
+
     .aboutdown {
       display: flex;
       gap: 10px;
@@ -384,6 +438,7 @@
       height: 55px;
       color: white;
       cursor: pointer;
+      width: 180px;
       font-weight: bold;
     }
 
@@ -433,6 +488,107 @@
       flex-direction: column;
       gap: 0px !important;
 
+    }
+
+    .premium {
+      display: flex;
+      width: 100vw;
+      min-height: 100vh;
+      flex-direction: column;
+      gap: 40px;
+      max-height: auto;
+      background: linear-gradient(to right, whitesmoke, white);
+      padding: 80px 20px;
+    }
+
+    .premiumtop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .premiumdesc {
+      color: gray;
+    }
+
+    .premiumtop h2 {
+      color: #344d77;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* Two columns */
+      grid-gap: 25px;
+      /* Gap between grid items */
+    }
+
+    .grid-item {
+      background-color: white;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      border-radius: 20px 0px 20px 0px;
+      border-bottom: 5px solid lightblue;
+      height: 210px;
+      padding: 20px 35px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: 300ms;
+    }
+
+    .grid-item:hover {
+      border-bottom: 5px solid rgb(255, 114, 65);
+      cursor: pointer;
+    }
+
+    .grid-inner {
+      display: flex;
+      gap: 15px;
+    }
+
+    .grid-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gridp1 {
+      color: #344d77;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .gridp2 {
+      color: gray;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    .grid-inner img {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      padding: 20px;
+      background-color: rgba(173, 216, 230, 0.5);
+      border: 1px dashed darkblue;
+    }
+
+    .aboutpremium {
+      color: white;
+      padding: 3px 10px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      background: rgb(255, 114, 65);
+      width: fit-content;
     }
   </style>
   <div
@@ -729,12 +885,18 @@
   <section class="service_section layout_padding sec-1 show-animate">
     <div class="service_container">
       <div class="container ">
-        <div class="heading_container">
+        <!-- <div class="heading_container">
           <h2>
             Our Services
           </h2>
           <p>
             What are our Services
+          </p>
+        </div> -->
+        <div class="premiumtop">
+          <p class="aboutpremium" style="width: fit-content;">OUR SERVICES</p>
+          <h2>Wide Variety of Logistics Services</h2>
+          <p class="premiumdesc">Discover exceptional logistics solutions designed to elevate your business.
           </p>
         </div>
         <div class="row">
@@ -892,15 +1054,15 @@
         We focus on efficiency, reliability, and sustainability, offering customized shipping solutions. Our skilled
         team ensures safe, timely delivery worldwide, partnering with you to optimize business success.</p>
       <div class="thingswedo">
-        <ul>
+        <ul class="emoji-list">
           <li>Intermodal Shipping</li>
-          <li>Intermodal Shipping</li>
-          <li>Intermodal Shipping</li>
+          <li>Freeze product Shipping</li>
+          <li>Hot Shot Trucking</li>
         </ul>
-        <ul>
+        <ul class="emoji-list">
+          <li>Container Freight</li>
           <li>Intermodal Shipping</li>
-          <li>Intermodal Shipping</li>
-          <li>Intermodal Shipping</li>
+          <li>Flatbed Shipping</li>
         </ul>
       </div>
       <div class="aboutdown">
@@ -957,6 +1119,85 @@
 
   <!-- about section -->
 
+  <section class="premium">
+    <div class="premiumtop">
+      <p class="aboutpremium" style="width: fit-content;">OUR SERVICES</p>
+      <h2> Premium Services By ExpressLine</h2>
+      <p class="premiumdesc">Discover exceptional premium logistics solutions designed to elevate your business. </p>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/ship.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">Expedited Shipping</p>
+            <p class="gridp2"> Guaranteed fast delivery for time-sensitive shipments, with priority handling and
+              dedicated resources to ensure prompt arrival.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/glove.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">White-Glove Service</p>
+            <p class="gridp2"> Premium handling of delicate or high-value items, including special packaging,
+              temperature control, and personalized care throughout the shipping process.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/supply.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1"> Customized Supply Chain Solutions</p>
+            <p class="gridp2">Tailored logistics strategies designed to optimize efficiency, reduce costs, and enhance
+              overall supply chain performance based on specific client needs and industry requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/warehousing.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">On-Demand Warehousing</p>
+            <p class="gridp2"> Flexible and scalable warehousing solutions with real-time inventory management, order
+              fulfillment, and distribution services available as needed, providing agility and responsiveness to
+              changing demands.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/track.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">Advanced Tracking and Analytics</p>
+            <p class="gridp2">Robust tracking systems with real-time updates, detailed analytics, and predictive
+              modeling capabilities to provide actionable insights, optimize routes, and improve decision-making for
+              clients.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-inner">
+          <img src="images/support.png" alt="oerd">
+          <div class="grid-text">
+            <p class="gridp1">Exclusive Customer Support</p>
+            <p class="gridp2">Dedicated account managers, 24/7 support, and personalized assistance for VIP clients,
+              offering a high level of responsiveness, proactive communication, and problem-solving expertise to ensure
+              a seamless logistics experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="about_section layout_padding sec-1 show-animate">
     <div class="container ">
       <div class="row">
@@ -966,15 +1207,23 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container" style="padding-bottom: 15px;">
+          <div class="detail-box"
+            style="align-items: center;justify-content: center; display: flex; flex-direction: column;">
+            <!-- <div class="heading_container" style="padding-bottom: 15px;">
               <h2 class="animate">
                 What we do
               </h2>
             </div>
             <h1 style="font-size: 1.5rem;" class="animate">We ensure safe transportation & delivery.
-            </h1>
-            <p class="animate">
+            </h1> -->
+            <div class="premiumtop">
+              <p class="aboutpremium animate" style="width: fit-content; color: white;">WHAT WE DO</p>
+              <h2 style="text-align: center;" class="animate">We ensure safe transportation & delivery.</h2>
+              <!-- <p class="premiumtopdesc" style="color: gray;font-size: 1.5rem;">We ensure safe transportation & delivery. -->
+
+              </p>
+            </div>
+            <p class="animate" style="text-align: center;letter-spacing: 1px; color: gray;">
               At ExpressLine Logistics, safety is our top priority. We implement stringent measures to ensure the safe
               transportation and delivery of your goods, adhering to industry standards and regulations. Our trained
               professionals handle each shipment with care and precision, minimizing risks and ensuring secure handling
