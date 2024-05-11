@@ -36,7 +36,74 @@
         width: 60vw;
         height: 100%;
         object-fit: cover;
+
       }
+
+      .aboutpremium {
+        color: white;
+        padding: 3px 10px;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        background: rgb(255, 114, 65);
+        width: fit-content;
+      }
+
+      .premiumtop h2 {
+        font-size: 1.6rem !important;
+      }
+
+      .premiumtop {
+        text-align: center !important;
+      }
+    }
+
+    .premium {
+      display: flex;
+      width: 100vw;
+      min-height: 100vh;
+      flex-direction: column;
+      gap: 40px;
+      max-height: auto;
+      background: linear-gradient(to right, whitesmoke, white);
+      padding: 80px 20px;
+    }
+
+    .premiumtop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .premiumdesc {
+      color: gray;
+    }
+
+    .premiumtop h2 {
+      color: #344d77;
+      font-size: 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .aboutpremium {
+      color: white;
+      padding: 3px 10px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      background: rgb(255, 114, 65);
+      width: fit-content;
     }
 
     section .animate {
@@ -64,7 +131,7 @@
     .grid-item img {
       max-width: 100%;
       height: auto;
-      border-radius: 0px;
+      border-radius: 20px 0px 20px 0px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
 
@@ -168,14 +235,20 @@
       <div class="row">
         <div class="col-md-6">
           <div class="detail-box">
-            <div class="heading_container" style="padding-bottom: 10px;">
+            <!-- <div class="heading_container" style="padding-bottom: 10px;">
               <h2 class="animate">
                 About Us
               </h2>
             </div>
             <h1 style=" font-size: 1.5rem;">Safe Logistics & Transport Solutions That Saves your
-              Valuable Time!</h1>
-            <p class="animate">
+              Valuable Time!</h1> -->
+            <div class="premiumtop animate">
+              <p class="aboutpremium animate" style="width: fit-content; color: white;">ABOUT US</p>
+              <h2 class="animate"> Safe Logistics & Transport Solutions</h2>
+              <!-- <p class="premiumdesc">Discover exceptional premium logistics solutions designed to elevate your business.
+              </p> -->
+            </div>
+            <p class="animate" style="letter-spacing: 1px;color: gray;">
               Welcome to ExpressLine Logistics, where we redefine excellence in logistics services. With a commitment to
               efficiency, reliability, and sustainability, we specialize in delivering tailored solutions for your
               shipping needs. Our experienced team navigates global supply chains with precision, ensuring your goods
@@ -248,15 +321,14 @@
       <div class="row">
         <div class="col-md-6">
           <div class="detail-box">
-            <div class="heading_container">
-              <h2 class="animate" style="padding-bottom: 15px;">
-                Why Choose ExpressLine Logistics?
-              </h2>
+            <div class="premiumtop animate">
+              <p class="aboutpremium animate" style="width: fit-content; color: white;">Why Choose ExpressLine
+                Logistics?</p>
+              <h2 class="animate"> Our Commitment to Excellence</h2>
+              <!-- <p class="premiumdesc">Discover exceptional premium logistics solutions designed to elevate your business.
+              </p> -->
             </div>
-            <h1 style=" font-size: 1.5rem;" class="animate">
-              Our Commitment to Excellence
-            </h1>
-            <p class="animate">
+            <p class="animate" style="color: gray; letter-spacing: 1px;">
               Choose ExpressLine Logistics for unparalleled reliability and efficiency in your supply chain. Our
               cutting-edge technology ensures real-time tracking and optimal routing for your shipments. With a
               dedicated customer support team available 24/7, rest assured your logistics needs are always in good

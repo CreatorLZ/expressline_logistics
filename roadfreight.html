@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/fevicon.png" type="">
+
+    <title> Expressline </title>
+
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <style>
+        @media screen and (min-width: 800px) {
+            .picture {
+                width: 60vw;
+                height: 100%;
+                object-fit: cover;
+
+            }
+
+            .aboutpremium {
+                color: white;
+                padding: 3px 10px;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 30px;
+                background: rgb(255, 114, 65);
+                width: fit-content;
+            }
+
+            .premiumtop h2 {
+                font-size: 1.6rem !important;
+            }
+
+            .premiumtop {
+                text-align: center !important;
+            }
+
+        }
+
+        .premium {
+            display: flex;
+            width: 100vw;
+            min-height: 100vh;
+            flex-direction: column;
+            gap: 40px;
+            max-height: auto;
+            background: linear-gradient(to right, whitesmoke, white);
+            padding: 80px 20px;
+        }
+
+        .premiumtop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .premiumdesc {
+            color: gray;
+        }
+
+        .premiumtop h2 {
+            color: #344d77;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .aboutpremium {
+            color: white;
+            padding: 3px 10px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            background: rgb(255, 114, 65);
+            width: fit-content;
+        }
+
+        section .animate {
+            transition: 0.7s
+        }
+
+        .sec-1 .animate {
+            transform: scale(0.8);
+            opacity: 0.5;
+        }
+
+        .sec-1.show-animate .animate {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px 0px 20px 0px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 800px) {
+            .mobile {
+                padding-bottom: 40px;
+            }
+
+            .assurance {
+                height: 80vh !important;
+                padding: 20px !important;
+            }
+
+            .assurecontainer {
+                height: 87% !important;
+            }
+
+            .assureinner {
+                height: 97% !important;
+                flex-direction: column;
+                justify-content: normal !important;
+                padding: 40px 15px !important;
+            }
+
+            .assuretext {
+                align-items: center;
+                width: 100% !important;
+                height: 90% !important;
+                gap: 10px !important;
+            }
+
+            .assuretext h2 {
+                font-size: 2rem !important;
+                font-weight: bold;
+            }
+
+            .smile {
+                height: 150px;
+                width: 120px;
+                top: 83% !important;
+                left: 83% !important;
+                z-index: 10;
+            }
+
+            .contactdiv3 {
+                z-index: 20;
+                height: 60px !important;
+            }
+
+            .showcase {
+                flex-direction: column;
+                padding: 5px 8px !important;
+                width: 100% !important;
+                height: 60vh !important;
+            }
+
+            .image1 {
+                width: 100% !important;
+                height: 40vh !important;
+            }
+
+            .sideimages {
+                display: none !important;
+            }
+
+            .writeup {
+                padding: 5px 8px !important;
+            }
+
+            .writeup h2 {
+                font-size: 2rem !important;
+                padding-bottom: 10px !important;
+            }
+
+            .icon-list {
+                padding: 0px !important;
+            }
+        }
+
+        .showcase {
+            display: flex;
+            width: 100vw;
+            height: 80vh;
+            gap: 10px;
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .image1 {
+            width: 60%;
+            height: 90%;
+        }
+
+        .sideimages {
+            display: flex;
+            flex-direction: column;
+            height: 90%;
+            width: 30%;
+        }
+
+        .sideimages img {
+            height: 50%;
+        }
+
+        .writeup {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            max-height: auto;
+            width: 100%;
+            padding: 20px 60px;
+            padding-bottom: 100px;
+        }
+
+        .writeup h2 {
+            color: #344d77;
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .writeup p {
+            font-size: 1.2rem;
+            font-weight: 100;
+            color: gray;
+        }
+
+        .writeup h3 {
+            color: #344d77;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding-top: 20px;
+        }
+
+        .writeup li {
+            font-size: 1.3rem;
+            color: gray;
+        }
+
+        .assurance {
+            width: 100%;
+            height: 50vh;
+            padding: 20px 40px;
+            background-color: white;
+            /* height: 300px; */
+        }
+
+        .assurecontainer {
+            display: flex;
+            width: 100%;
+            background: rgb(255, 114, 65);
+            border-radius: 20px;
+            height: 250px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .assureinner {
+            width: 98%;
+            height: 230px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px dashed white;
+            padding: 10px 40px;
+        }
+
+        .assuretext {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            width: 50%;
+        }
+
+        .assuretext h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .assuretext p {
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+
+        .smile {
+            position: absolute;
+            top: 23%;
+            left: 64%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        .contactdiv3 {
+            background: white;
+            color: #344d77;
+            font-size: 1rem;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            gap: 20px;
+            height: 50px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0px 2px 10px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .contactdiv3 img {
+            width: 35px;
+            height: 35px;
+            padding: 5px;
+            background: rgba(173, 216, 230, 0.5);
+            border-radius: 50%;
+        }
+
+        .icon-list {
+            list-style-type: none;
+        }
+
+        .icon-list li {
+            padding-left: 30px;
+            padding-bottom: 10px;
+            background-image: url('images/tick2.png');
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: left top;
+        }
+    </style>
+    <div id="google_translate_element" style="padding: 10px 30px;   background-color: #344d77;"></div>
+
+</head>
+
+<body class="sub_page">
+
+    <div class="hero_area">
+        <div class="hero_bg_box">
+            <img src="images/slider-bg.jpg" alt="">
+        </div>
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="header_top">
+                <div class="container-fluid ">
+                    <div class="header_top_content">
+                        <a class="navbar-brand d-none d-lg-flex" href="index.html">
+                            <span>
+                                Expressline
+                            </span>
+                        </a>
+                        <div class="contact_nav">
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    +01 123455678990
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    demo@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_bottom">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg custom_nav-container ">
+                        <a class="navbar-brand d-flex d-lg-none" href="index.html">
+                            <span>
+                                Expressline
+                            </span>
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class=""> </span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav  ">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="index.html">Home </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="service.html">Services</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="about.html"> About <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact Us</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
+                </li> -->
+                                <li style="padding: 5px 15px; background-color: rgb(255, 114, 65); color: white;">
+                                    <a href="track.html" style="color: white;">
+                                        Track
+                                    </a>
+                                </li>
+                                <!-- <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form> -->
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- end header section -->
+    </div>
+    <section class="showcase">
+        <img src="images/road.webp" alt="" class="image1">
+        <div class="sideimages">
+            <img src="images/road2.webp" alt="">
+            <img src="images/road3.webp" alt="">
+        </div>
+    </section>
+    <!-- info section -->
+
+    <section class="writeup">
+        <h2>Land Freight Logistics</h2>
+        <p>Explore our efficient road transport solutions designed for reliability and timeliness.From seamless
+            handling of local deliveries to excellent interstate hauls, you can
+            trust us to keep your goods moving smoothly, ensuring every mile of the journey is optimized for your
+            business's success.
+            <br> <br>
+            Over the last 20 Years we have made an impact that is strong & we have long way to go.
+            <br><br>
+            These are the concepts that shape our distinctive culture & differentiate us from others. They ture the
+            unique spirit of our Firm guide the behaviors that enable us to deliver the promises we make to our clients
+            and our people.
+        </p>
+        <h3>ExpressLine Values</h3>
+        <p>At ExpressLine Logistics our culture comes to life through four core values:</p>
+        <ul class="icon-list">
+            <li>We uphold the highest ethical standards in all our interactions, fostering trust and
+                transparency with our clients, partners, and employees.</li>
+            <li>We strive for excellence in everything we do, continuously improving our processes,
+                services, and solutions to deliver superior results.</li>
+            <li>We embrace innovation and creativity to drive efficiency, adaptability, and sustainability
+                in our operations and service offerings.</li>
+            <li>We are dedicated to understanding and exceeding our clients' needs, delivering tailored
+                solutions and exceptional service that add value to their businesses.</li>
+        </ul>
+    </section>
+
+    <section class="assurance">
+        <div class="assurecontainer">
+            <img src="images/smile.png" alt="mansmiling" class="smile">
+            <div class="assureinner">
+                <div class="assuretext">
+                    <h2>We ensure safe transportation & delivery</h2>
+                    <p>Your shipments are in trusted hands, ensuring secure transport and timely delivery. Our
+                        commitment to
+                        safety and reliability guarantees peace of mind for your logistics needs</p>
+                </div>
+                <div class="contactdiv3" href="contact.html">
+                    <img src="images/phone.png" alt="mark">
+                    <p style="margin-top: 15px;">+01 123455678990</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="info_section layout_padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 info-col">
+                    <div class="info_detail">
+                        <h4>
+                            ExpressLine
+                        </h4>
+                        <p>
+                            Delivering Excellence, Redefining Logistics.
+                        </p>
+                        <div class="info_social">
+                            <a href="">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 info-col">
+                    <div class="info_contact">
+                        <h4>
+                            Address
+                        </h4>
+                        <div class="contact_link_box">
+                            <a href="">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>
+                                    Location
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    Call +01 1234567890
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    demo@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 info-col">
+                    <div class="info_contact">
+                        <h4>
+                            Subscribe
+                        </h4>
+                        <form action="#">
+                            <input type="text" placeholder="Enter email" />
+                            <button type="submit">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 info-col">
+                    <div class="map_container">
+                        <div class="map">
+                            <div id="googleMap"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end info section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayYear"></span> All
+                <a href="https://html.design/">ExpressLine</a>
+            </p>
+        </div>
+    </footer>
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+    </script>
+    <!-- End Google Map -->
+    <!-- animation -->
+    <script>
+
+        let sections = document.querySelectorAll('section')
+
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+
+                if (top >= offset && top < offset + height) {
+                    sec.classList.add('show-animate');
+                }
+                else {
+                    sec.classList.remove('show-animate');
+                }
+            })
+        }
+    </script>
+    <!-- end animation -->
+    <script src="script.js"></script>
+    <!-- Google Translate -->
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        // Initialize Google Translate
+        // function googleTranslateElementInit() {
+        //   new google.translate.TranslateElement(
+        //     {
+        //       pageLanguage: 'en',
+        //       autoDisplay: false, // Disable automatic display of the widget
+        //       gaTrack: true, // Enable Google Analytics tracking
+        //       gaId: 'G-K5LWV6R4MT' // Replace 'YOUR-GA-ID' with your Google Analytics ID
+        //     },
+        //     'google_translate_element'
+        //   );
+        // }
+
+        // Load Google Translate API dynamically
+        // function loadGoogleTranslate() {
+        //   var script = document.createElement('script');
+        //   script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        //   script.type = 'text/javascript';
+        //   document.head.appendChild(script);
+        // }
+
+        // Detect user's language and trigger translation
+        // function detectUserLanguageAndTranslate() {
+        //   var userLanguage = navigator.language || navigator.userLanguage;
+        //   var supportedLanguages = ['af', 'sq', 'am', 'ar', 'hy', 'az', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'ceb', 'ny', 'zh-CN', 'zh-TW',
+        //     'co', 'hr', 'cs', 'da', 'nl', 'en', 'eo', 'et', 'tl', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gu', 'ht',
+        //     'ha', 'haw', 'iw', 'hi', 'hmn', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jw', 'kn', 'kk', 'km', 'rw', 'ko',
+        //     'ku', 'ky', 'lo', 'la', 'lv', 'lt', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no',
+        //     'or', 'ps', 'fa', 'pl', 'pt', 'pa', 'ro', 'ru', 'sm', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so',
+        //     'es', 'su', 'sw', 'sv', 'tg', 'ta', 'te', 'th', 'tr', 'uk', 'ur', 'ug', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo',
+        //     'zu']; // Add more languages as needed
+        //   var userLanguageShort = userLanguage.split('-')[0];
+
+        //   if (supportedLanguages.includes(userLanguageShort)) {
+        //     loadGoogleTranslate(); // Load Google Translate API
+        //   }
+        // }
+
+        // Call detectUserLanguageAndTranslate when the page loads
+        // detectUserLanguageAndTranslate();
+    </script>
+    <!-- End Google Translate -->
+
+    <!-- Google Translate -->
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    autoDisplay: false, // Disable automatic display of the widget
+                    gaTrack: true, // Enable Google Analytics tracking
+                    gaId: 'G-K5LWV6R4MT', // Replace 'YOUR-GA-ID' with your Google Analytics ID
+                    layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL // Adjust layout as needed
+                },
+                'google_translate_element'
+            );
+        }
+
+        // Load Google Translate API dynamically
+        function loadGoogleTranslate() {
+            var script = document.createElement('script');
+            script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            script.type = 'text/javascript';
+            document.head.appendChild(script);
+        }
+
+        // Detect user's language and trigger translation
+        function detectUserLanguageAndTranslate() {
+            var userLanguage = navigator.language || navigator.userLanguage;
+            var supportedLanguages = ['af', 'sq', 'am', 'ar', 'hy', 'az', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'ceb', 'ny', 'zh-CN', 'zh-TW',
+                'co', 'hr', 'cs', 'da', 'nl', 'en', 'eo', 'et', 'tl', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gu', 'ht',
+                'ha', 'haw', 'iw', 'hi', 'hmn', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jw', 'kn', 'kk', 'km', 'rw', 'ko',
+                'ku', 'ky', 'lo', 'la', 'lv', 'lt', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no',
+                'or', 'ps', 'fa', 'pl', 'pt', 'pa', 'ro', 'ru', 'sm', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so',
+                'es', 'su', 'sw', 'sv', 'tg', 'ta', 'te', 'th', 'tr', 'uk', 'ur', 'ug', 'uz', 'vi', 'cy', 'xh', 'yi', 'yo',
+                'zu']; // Add more languages as needed
+            var userLanguageShort = userLanguage.split('-')[0];
+
+            if (supportedLanguages.includes(userLanguageShort)) {
+                // Load Google Translate API and set target language
+                googleTranslateElementInit();
+            } else {
+                // Fallback to Geolocation API for better location detection
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        function (position) {
+                            // Use latitude and longitude to determine the location
+                            // Example: Check if the user is in a specific country and set language accordingly
+                            var latitude = position.coords.latitude;
+                            var longitude = position.coords.longitude;
+
+                            // You can implement your own logic here to determine the language based on location
+                            var locationLanguage = determineLanguageFromLocation(latitude, longitude);
+
+                            if (locationLanguage && supportedLanguages.includes(locationLanguage)) {
+                                // Set target language based on location
+                                setTargetLanguage(locationLanguage);
+                                // Load Google Translate API
+                                loadGoogleTranslate();
+                            } else {
+                                // Fallback to default language
+                                loadGoogleTranslate();
+                            }
+                        },
+                        function (error) {
+                            // Handle geolocation error
+                            console.error('Error getting user location:', error);
+                            // Fallback to default language
+                            loadGoogleTranslate();
+                        }
+                    );
+                } else {
+                    // Browser does not support Geolocation API, fallback to default language
+                    loadGoogleTranslate();
+                }
+            }
+        }
+
+        // Function to determine language based on location
+        async function determineLanguageFromLocation(latitude, longitude) {
+            try {
+                const response = await fetch(`https://restcountries.com/v3.1/latlng/${latitude},${longitude}`);
+                const data = await response.json();
+
+                if (data && data[0] && data[0].languages && data[0].languages[0]) {
+                    const languageCode = data[0].languages[0].code;
+                    return languageCode;
+                } else {
+                    console.error('Error: Unable to determine language from location data.');
+                    return 'en'; // Fallback to default language
+                }
+            } catch (error) {
+                console.error('Error fetching location data:', error);
+                return 'en'; // Fallback to default language
+            }
+        }
+
+
+        // Function to set target language for Google Translate
+        function setTargetLanguage(languageCode) {
+            if (google.translate.TranslateElement) {
+                google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: languageCode,
+                    layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                }, 'google_translate_element');
+            }
+        }
+
+        // Call detectUserLanguageAndTranslate when the page loads
+        detectUserLanguageAndTranslate();
+    </script>
+    <!-- End Google Translate -->
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K5LWV6R4MT"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-K5LWV6R4MT'); </script>
+</body>
+
+</html>
