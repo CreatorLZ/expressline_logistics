@@ -195,6 +195,7 @@
                 height: auto;
                 flex-direction: column;
                 gap: 10px;
+
             }
 
             .inputbox .show {
@@ -230,7 +231,8 @@
             .track {
                 padding: 30px 10px;
                 margin: 0;
-                width: 90vw;
+                width: 90vw !important;
+                overflow-x: hidden !important;
                 justify-content: center;
             }
 
@@ -240,7 +242,8 @@
 
             .info {
                 width: 100% !important;
-                overflow: hidden !important;
+                overflow-x: hidden !important;
+                justify-content: flex-start !important;
             }
 
             .infocontainer {
@@ -480,7 +483,7 @@
     <!-- end info section -->
 
     <!-- footer section -->
-    <footer class="footer_section">
+    <footer class="footer_section" style="overflow-x: hidden !important;">
         <div class="container">
             <p>
                 &copy; <span id="displayYear"></span> All
