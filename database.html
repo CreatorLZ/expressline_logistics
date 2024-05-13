@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Package</title>
+    <style>
+        body {
+            background-image: url('background-image.jpg');
+            background-size: cover;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .tracking-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 2s;
+        }
+
+        .map {
+            width: 50%;
+            height: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .tracking-info {
+            width: 50%;
+            padding: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        #tracking-number {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        #track-btn {
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #track-btn:hover {
+            background-color: #003d82;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="tracking-container">
+        <div id="map" class="map"></div>
+        <div class="tracking-info">
+            <input type="text" id="tracking-number" placeholder="Enter tracking number">
+            <button id="track-btn">Track</button>
+            <!-- Additional tracking info here -->
+        </div>
+    </div>
+    <script>
+        // Add interactivity and animations here
+        document.getElementById('tracking-number').addEventListener('focus', function() {
+            this.style.borderColor = '#0056b3';
+        });
+
+        document.getElementById('tracking-number').addEventListener('blur', function() {
+            this.style.borderColor = '#ddd';
+        });
+
+        document.getElementById('map').addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+
+        document.getElementById('map').addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>

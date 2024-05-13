@@ -98,6 +98,97 @@
             border: none;
         }
 
+        .info {
+            width: 100vw;
+            height: fit-content;
+            background: whitesmoke;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+
+        }
+
+        .infocontainer {
+            width: 80%;
+            background-color: white;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            /* padding: 10px; */
+        }
+
+        .infotop {
+            background: #344d77;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .infobody {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .infobodytop {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            /* text-align: center; */
+            padding: 10px;
+        }
+
+        .comment {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .info-columns {
+            display: flex;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 10px;
+
+        }
+
+        p {
+            margin: 0;
+            display: inline-block;
+            width: 450px;
+
+        }
+
+
         @media screen and (max-width: 800px) {
             .inputbox {
                 width: 100%;
@@ -147,6 +238,40 @@
                 font-size: 14px;
             }
 
+            .info {
+                width: 100% !important;
+                overflow: hidden !important;
+            }
+
+            .infocontainer {
+                width: 100% !important;
+            }
+
+            .infobodytop {
+                width: 100% !important;
+                flex-direction: column;
+            }
+
+            .details {
+                width: 100% !important;
+            }
+
+            .info-columns {
+                width: 100% !important;
+            }
+
+            .column {
+                width: 100% !important;
+            }
+
+            .column ul {
+                width: 100% !important;
+            }
+
+            .column li {
+                width: 100% !important;
+                display: flex;
+            }
         }
     </style>
     <div id="google_translate_element" style="padding: 10px 30px;   background-color: #344d77;"></div>
@@ -246,7 +371,107 @@
             <button class="show2">Track & Trace</button>
             <p>FOR ORDER STATUS INQUIRY</p>
         </section>
+
     </div>
+
+    <section class="info">
+        <div class="infocontainer">
+            <div class="infotop">PACKAGE TRACKER</div>
+            <div class="infobodytop">
+                <div style="display: flex; flex-direction: column; width: 100% !important;">
+                    <h2 style="font-weight: 500;"> 4e35w2ert</h2>
+                    <p style="color: gray;">Amsterdam to United states</p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; width: 100% !important;">
+                    <h2>In Transit</h2>
+                    <p style="color: gray;">10:00PM</p>
+                    <p style="color: gray;">May 13th 2024</p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="infotop">COMMENT</div>
+                <p>10:00PM</p>
+                <p>May 13th 2024</p>
+            </div>
+
+            <div class="details">
+                <div class="infotop">
+                    <p>Details</p>
+                </div>
+                <div class="info-columns">
+                    <div class="column">
+                        <ul>
+                            <li>
+                                <p>Tracking Number:</p>
+                                <p>4e35w2ert</p>
+                            </li>
+                            <li>
+                                <p>Date:</p>
+                                <p>May 13th 2024</p>
+                            </li>
+                            <li>
+                                <p>Status:</p>
+                                <p>In transit</p>
+                            </li>
+                            <li>
+                                <p>Origin:</p>
+                                <p>Amsterdam</p>
+                            </li>
+                            <li>
+                                <p>Destination:</p>
+                                <p>United States</p>
+                            </li>
+                            <li>
+                                <p>Shipment type:</p>
+                                <p>Cargo</p>
+                            </li>
+
+                            <li>
+                                <p>Weight:</p>
+                                <p>300kg</p>
+                            </li>
+                            <li>
+                                <p>Shipper name:</p>
+                                <p>John Bolton</p>
+                            </li>
+                            <li>
+                                <p>Shipper address:</p>
+                                <p>13th 4thway Amsterdam</p>
+                            </li>
+                            <li>
+                                <p>Consignee name:</p>
+                                <p>RICHARD</p>
+                            </li>
+                            <li>
+                                <p>Address:</p>
+                                <p>13th 4thway Amsterdam</p>
+                            </li>
+                            <li>
+                                <p>Booking mode:</p>
+                                <p>Specify</p>
+                            </li>
+                            <li>
+                                <p>Consignee phone:</p>
+                                <p>+ 45 456 4564 456</p>
+                            </li>
+                            <li>
+                                <p>Expected Delivery Date:</p>
+                                <p>May 13th 2024</p>
+                            </li>
+                            <li>
+                                <p>Comment:</p>
+                                <p>To Sarah</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 
 
     <!-- info section -->
