@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,21 +53,32 @@
             transition: background-color 0.3s ease-in-out;
         }
 
-        #track-btn:hover {
+        ef #track-btn:hover {
             background-color: #003d82;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideIn {
-            from { transform: translateX(100%); }
-            to { transform: translateX(0); }
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="tracking-container">
         <div id="map" class="map"></div>
@@ -78,21 +90,22 @@
     </div>
     <script>
         // Add interactivity and animations here
-        document.getElementById('tracking-number').addEventListener('focus', function() {
+        document.getElementById('tracking-number').addEventListener('focus', function () {
             this.style.borderColor = '#0056b3';
         });
 
-        document.getElementById('tracking-number').addEventListener('blur', function() {
+        document.getElementById('tracking-number').addEventListener('blur', function () {
             this.style.borderColor = '#ddd';
         });
 
-        document.getElementById('map').addEventListener('mouseenter', function() {
+        document.getElementById('map').addEventListener('mouseenter', function () {
             this.style.transform = 'scale(1.05)';
         });
 
-        document.getElementById('map').addEventListener('mouseleave', function() {
+        document.getElementById('map').addEventListener('mouseleave', function () {
             this.style.transform = 'scale(1)';
         });
     </script>
 </body>
+
 </html>
